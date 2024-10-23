@@ -1,0 +1,1 @@
+# tgr-odoo.nvim
