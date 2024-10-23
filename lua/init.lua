@@ -1,10 +1,17 @@
 -- Configuración principal del plugin
 local M = {}
-
+-- Funcion para configurar comandos
+local function setup_commands()
+	vim.api.nvim_create_user_command("OdooLoadNavigation", function()
+		M.load_navigation()
+	end, {})
+end
 -- Función para inicializar el plugin
 function M.setup(opts)
 	-- Configuraciones predeterminadas
 	M.options = opts or {}
+
+	setup_commands()
 
 	-- Aquí cargaremos nuestras funciones
 	M.load_navigation()
